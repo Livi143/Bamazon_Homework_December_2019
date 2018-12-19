@@ -31,5 +31,7 @@ INSERT INTO products (product_name, department_name, price, stock_quantity) VALU
 
 INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES ("go girl", "sporting goods", 8.99, 91);
 
+SELECT * FROM bamazon_db;
+
 
 

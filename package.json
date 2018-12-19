@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Livi143/Bamazon_Homework_December_2019/issues"
   },
-  "homepage": "https://github.com/Livi143/Bamazon_Homework_December_2019#readme"
+  "homepage": "https://github.com/Livi143/Bamazon_Homework_December_2019#readme",
+  "dependencies": {
+    "inquirer": "^6.2.1",
+    "mysql": "^2.16.0"
+  }
 }
