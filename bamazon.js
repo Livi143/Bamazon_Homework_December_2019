@@ -62,18 +62,19 @@ var promptCustomer = function(results){
         for (var i=0 ; i < results.length; i++){
             //console.log("message " + res[i]);
             if ((results[i].itemid == parseInt(answer.purchase_item)) && (results[i].stock_quantity >= parseInt(answer.quantity))){
+                console.log("results[i]: ",results[i]);
+                results[i].stock_quantity - answer.quantity;
+
                 console.log(results[i]);
-                
-                console.log("requested amount is in stock! you can proceed to purchase");
-            } else {
-                console.log(results[i].itemid);
-                console.log("product not in stock");
-            }
+                return console.log("requested amount is in stock! you can proceed to purchase");
+
+            } 
 
             
         }
     })
 }
+// CHECKOUT ICECREAM CRUD TO UPDATE THE SQL DATABSE!!!
 
 
 
