@@ -3,7 +3,7 @@
 
 // var connection = mysql.createConnection({
 //     host: "localhost",
-//     port: 8889,
+//     port: 8889, // do we need 3306?
 //     user: "root",
 //     password: "root",
 //     database: "bamazon_db"
