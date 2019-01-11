@@ -64,20 +64,55 @@ var promptCustomer = function(results){
             if ((results[i].itemid == parseInt(answer.purchase_item)) && (results[i].stock_quantity >= parseInt(answer.quantity))){
                 console.log("results[i]: ",results[i]);
                 results[i].stock_quantity - answer.quantity;
-
                 console.log(results[i]);
                 return console.log("requested amount is in stock! you can proceed to purchase");
-
             } 
-
-            
+        }
+    }).then(function(answer){
+        if((res[id].stock_quantity-answer.quant)>0){
+            connection.query("UPDATE products SET stock_quantity")
         }
     })
 }
+
 // CHECKOUT ICECREAM CRUD TO UPDATE THE SQL DATABSE!!!
 
 
-
+var promptCustomer = function(res) {
+    inquirer.prompt([{
+        type: "input", 
+        name: 'choice',
+        message: "what do you want to buy? (quit with Q)",
+    }]).then(function(answer){
+        var correct = false: 
+        for(var i = 0; i<res.length;i ++){
+            correct=true;
+            var product=answer.choice
+            var id = i;
+            inquirer.prompt({
+                type: 'input',
+                name: 'quant',
+                message: 'what quantity would you like to purchase?',
+                validate: function(value){
+                    if(isNaN(value)==false){
+                        return true;
+                    }   else {
+                        return false;
+                    }
+                }
+            }).then(function(answer){
+                if((res[id].stock_quantity.answer.quant)>0){
+                    connection.query("UPDATE products SET stock_quantity= '"+(res[id].stock_quantity - answer.quant)+" '", function(err,res2){
+                        console.log("thank you for your purchase!");
+                    })
+                }   else {
+                    console.log("Not a valid selection");
+                    promptCustomer(res);
+                }
+            })
+        }
+    })
+}
 
 
 
